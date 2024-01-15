@@ -28,9 +28,6 @@ public class agent1nav : MonoBehaviour
         if (hasArrived)
         {
             currentIndex += 1;
-            if (currentIndex >= chemin.transform.childCount)
-                currentIndex = 0;
-
             agent.destination = GetPositionFromTargetIndex(currentIndex);
         }
     }

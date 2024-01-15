@@ -2,9 +2,9 @@ using UnityEngine.AI;
 using UnityEngine;
 using Unity.VisualScripting;
 
-public class agent1nav : MonoBehaviour
+public class AgentNavigation : MonoBehaviour
 {
-    [SerializeField] private GameObject chemin;
+    [HideInInspector] public GameObject chemin;
     int currentIndex = 0;
 
     NavMeshAgent agent;
@@ -19,6 +19,7 @@ public class agent1nav : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.destination = GetPositionFromTargetIndex(currentIndex);
+
     }
 
     private void Update()

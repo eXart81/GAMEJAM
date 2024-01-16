@@ -31,32 +31,24 @@ public class objetsàdeplacés : MonoBehaviour
        if (hasPlayer && Keyboard.current[Key.F].wasPressedThisFrame)
        {
             GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Collider>().enabled = false;
             transform.parent = Camera.main.transform;
+            transform.position = Camera.main.transform.position + Camera.main.transform.forward * 3f;
             beingCarried=true;
        }
     
        if (beingCarried)
        {
-            if (touched)
-            {
-                GetComponent<Rigidbody>().isKinematic = false;
-                transform.parent = null;
-                beingCarried = false;
-                touched = false;
-            }
-            
-            if (Mouse.current.leftButton.wasPressedThisFrame)                
-            {
-                GetComponent<Rigidbody>().isKinematic = false;
-                transform.parent = null;
-                beingCarried = false;
-                GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * throwForce);
-            }
+            transform.eulerAngles = new Vector3(0f, transform.parent.eulerAngles.y, 0f);
 
-            if (Mouse.current.rightButton.wasPressedThisFrame)
+
+            if (Mouse.current.leftButton.wasPressedThisFrame)
             {
                 GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<Collider>().enabled = true;
+
                 transform.parent = null;
+                transform.position = new Vector3(transform.position.x, 2, transform.position.z);
                 beingCarried = false;
             }
        }

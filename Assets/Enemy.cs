@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
 
-        PlayerStats.money += worth;
+        vaguesManager.GetComponent<PlayerStats>().Money += worth;
 
         if(deathEffect != null)
         {

@@ -25,6 +25,7 @@ public class VaguesManager : MonoBehaviour
 
     private int waveIndex = 0;
 
+
     // Utilisez plutôt une propriété privée pour stocker le nombre d'ennemis vivants.
     private int enemiesAlive;
 
@@ -34,9 +35,12 @@ public class VaguesManager : MonoBehaviour
         set { enemiesAlive = value; }
     }
 
+    private PlayerStats playerStats;
+
     private void Start()
     {
         EnemiesAlive = 0;  // Assurez-vous d'initialiser le nombre d'ennemis vivants.
+        playerStats = GetComponent<PlayerStats>();
     }
     public void DecrementEnemiesAlive()
     {
@@ -72,7 +76,7 @@ public class VaguesManager : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        PlayerStats.rounds++;
+        playerStats.Rounds++;
 
         Wave wave = waves[waveIndex];
 

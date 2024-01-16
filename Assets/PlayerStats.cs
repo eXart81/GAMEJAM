@@ -5,19 +5,41 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
 
-    public static int money;
+
+    int _money;
+    public int Money
+    {
+        get { return _money; }
+        set { _money = value; hudObject.UpdateMoney(value); }
+    }
+
     public int startMoney = 400;
 
-    public static int lives;
+    int _lives;
+    public int Lives
+    {
+        get { return _lives; }
+        set { _lives = value; }
+    }
+
+
     public int startLives = 20;
 
-    public static int rounds;
+    int _rounds;
+    public int Rounds
+    {
+        get { return _rounds; }
+        set { _rounds = value; hudObject.UpdateManche(value);  }
+    }
+
+
+    [SerializeField] HUD hudObject;
 
     public void Start()
     {
-        rounds = 0;
-        money = startMoney;
-        lives = startLives;
+        Rounds = 0;
+        Money = startMoney;
+        Lives = startLives;
     }
 
 }

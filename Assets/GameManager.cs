@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject completeLevelUI;
 
+    PlayerStats playerStats;
+
     private void Start()
     {
         gameIsOver = false;
+        playerStats = GetComponent<PlayerStats>(); 
     }
 
     void Update()
@@ -24,7 +27,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (PlayerStats.lives <= 0)
+        if (playerStats.Lives <= 0)
         {
             EndGame();
         }

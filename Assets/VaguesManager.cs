@@ -70,18 +70,6 @@ public class VaguesManager : MonoBehaviour
             this.enabled = false;
         }
 
-        if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-            return;
-        }
-
-        countdown -= Time.deltaTime;
-
-        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
-
-        // waveCountdownTimer.text = string.Format("{0:00.00}", countdown);
     }
 
     IEnumerator SpawnWave()

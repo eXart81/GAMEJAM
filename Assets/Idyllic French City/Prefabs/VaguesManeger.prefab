@@ -47,12 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9daa6e47cc04cb8498b44885060ccb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesAlive: 0
   gameManager: {fileID: 5949535382399769973}
   chemin: {fileID: 0}
   waves: []
   spawnPoint: {fileID: 0}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 1
   waveCountdownTimer: {fileID: 0}
 --- !u!114 &5949535382399769973
 MonoBehaviour:

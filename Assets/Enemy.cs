@@ -31,8 +31,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-
-        healthbar.fillAmount = health / startHealth;
+        //healthbar.fillAmount = health / startHealth;
 
         if (health <= 0 && !isDead)
         {
@@ -51,8 +50,11 @@ public class Enemy : MonoBehaviour
 
         PlayerStats.money += worth;
 
-        GameObject deathParticles = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(deathParticles, 2f);
+        if(deathEffect != null)
+        {
+            GameObject deathParticles = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(deathParticles, 2f);
+        }
 
         // Utilisez l'instance de VaguesManager pour décrémenter EnemiesAlive
         if (vaguesManager != null)

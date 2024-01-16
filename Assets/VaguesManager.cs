@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class VaguesManager : MonoBehaviour
 {
-
-    public int EnemiesAlive = 0;
+    // ... (autre code)
 
     public GameManager gameManager;
 
@@ -26,14 +25,26 @@ public class VaguesManager : MonoBehaviour
 
     private int waveIndex = 0;
 
-    private void Start()
+    // Utilisez plutôt une propriété privée pour stocker le nombre d'ennemis vivants.
+    private int enemiesAlive;
+
+    public int EnemiesAlive
     {
-        EnemiesAlive = 0;
+        get { return enemiesAlive; }
+        set { enemiesAlive = value; }
     }
 
+    private void Start()
+    {
+        EnemiesAlive = 0;  // Assurez-vous d'initialiser le nombre d'ennemis vivants.
+    }
+    public void DecrementEnemiesAlive()
+    {
+        EnemiesAlive--;
+    }
     void Update()
     {
-
+        // Utilisez "EnemiesAlive" au lieu de "DecrementEnemiesAlive".
         if (EnemiesAlive > 0)
         {
             return;
@@ -56,13 +67,11 @@ public class VaguesManager : MonoBehaviour
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-       //waveCountdownTimer.text = string.Format("{0:00.00}", countdown);
-
+        // waveCountdownTimer.text = string.Format("{0:00.00}", countdown);
     }
 
     IEnumerator SpawnWave()
     {
-
         PlayerStats.rounds++;
 
         Wave wave = waves[waveIndex];
@@ -76,13 +85,12 @@ public class VaguesManager : MonoBehaviour
         }
 
         waveIndex++;
-
     }
 
     void SpawnEnemy(GameObject enemy)
     {
         AgentNavigation ag = Instantiate(enemy, spawnPoint.position, spawnPoint.rotation, transform).GetComponent<AgentNavigation>();
-        if(ag != null)
+        if (ag != null)
         {
             Debug.Log(ag.name);
             ag.chemin = chemin;

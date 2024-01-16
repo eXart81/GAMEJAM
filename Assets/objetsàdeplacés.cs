@@ -5,18 +5,19 @@ using UnityEngine.InputSystem;
 
 public class objetsàdeplacés : MonoBehaviour
 {
-    [SerializeField] public GameObject gameobject;
-
-    public Transform player;
-    public Transform playerCam;
+    private Transform player;
     public float throwForce = 10;
     private bool hasPlayer = false;
     private bool beingCarried = false;
     private bool touched = false;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void Update()
     {
-       float dist = Vector3.Distance(gameobject.transform.position, player.position);
+       float dist = Vector3.Distance(transform.position, player.position);
         
        if (dist <=2f)
        {
@@ -30,7 +31,7 @@ public class objetsàdeplacés : MonoBehaviour
        if (hasPlayer && Keyboard.current[Key.F].wasPressedThisFrame)
        {
             GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = playerCam;
+            transform.parent = Camera.main.transform;
             beingCarried=true;
        }
     
@@ -49,7 +50,7 @@ public class objetsàdeplacés : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
-                GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+                GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * throwForce);
             }
 
             if (Mouse.current.rightButton.wasPressedThisFrame)

@@ -148,5 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameobject: {fileID: 8490871826578321472}
   player: {fileID: 0}
-  playerCam: {fileID: 0}
+  playerCam: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
+    type: 3}
   throwForce: 1000

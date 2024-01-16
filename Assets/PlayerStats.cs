@@ -19,9 +19,8 @@ public class PlayerStats : MonoBehaviour
     public int Lives
     {
         get { return _lives; }
-        set { _lives = value; }
+        set { _lives = value; hudObject.UpdateLives(value); }
     }
-
 
     public int startLives = 20;
 

@@ -9,6 +9,8 @@ public class HUD : MonoBehaviour
     TMP_Text mancheText;
     [SerializeField]
     TMP_Text moneyText;
+    [SerializeField]
+    TMP_Text livesText;
 
     public void UpdateMoney(int money)
     {
@@ -24,5 +26,11 @@ public class HUD : MonoBehaviour
             mancheText.text = manche.ToString();
         }
     }
-
+    public void UpdateLives(int lives)
+    {
+        if (livesText != null)
+        {
+            livesText.text = lives.ToString();
+        }
+    }
 }

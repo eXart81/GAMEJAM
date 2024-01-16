@@ -1,6 +1,7 @@
 using UnityEngine.AI;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public class AgentNavigation : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AgentNavigation : MonoBehaviour
     int currentIndex = 0;
 
     NavMeshAgent agent;
+    PlayerStats stats;
     // Update is called once per frame
 
     Vector3 GetPositionFromTargetIndex(int index)
@@ -19,7 +21,7 @@ public class AgentNavigation : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.destination = GetPositionFromTargetIndex(currentIndex);
-
+        stats = FindObjectOfType<PlayerStats>();
     }
 
     private void Update()
@@ -29,7 +31,15 @@ public class AgentNavigation : MonoBehaviour
         if (hasArrived)
         {
             currentIndex += 1;
-            agent.destination = GetPositionFromTargetIndex(currentIndex);
+            if(currentIndex == chemin.transform.childCount)
+            {
+                Destroy(gameObject);
+                stats.GetComponent<PlayerStats>().Lives -= 1;
+            }
+            else
+            {
+                agent.destination = GetPositionFromTargetIndex(currentIndex);
+            }
         }
     }
 }

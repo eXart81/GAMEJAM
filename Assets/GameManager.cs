@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameIsOver = false;
-        playerStats = GetComponent<PlayerStats>(); 
+        playerStats = GetComponent<PlayerStats>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
     }
 
     void Update()
@@ -36,7 +38,9 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         gameIsOver = true;
-        //gameOverUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        gameOverUI.SetActive(true);
     }
 
     public void WinLevel()

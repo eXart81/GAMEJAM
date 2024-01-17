@@ -15,8 +15,6 @@ public class VaguesManager : MonoBehaviour
     [SerializeField]
     private Transform spawnPoint;
 
-    private float countdown = 5f;
-
     [SerializeField]
     private Text waveCountdownTimer;
 
@@ -74,6 +72,7 @@ public class VaguesManager : MonoBehaviour
         playerStats.Rounds++;
 
         Wave wave = waves[waveIndex];
+        
 
         EnemiesAlive = wave.count;
 
@@ -82,7 +81,7 @@ public class VaguesManager : MonoBehaviour
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);
         }
-
+       
         waveIndex++;
     }
 

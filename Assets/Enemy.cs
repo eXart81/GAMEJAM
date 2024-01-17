@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     private float health;
     public int worth = 50;
 
+    
+
     public GameObject deathEffect;
 
     public Image healthbar;
@@ -18,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     // Ajoutez une référence à l'instance de VaguesManager
     private VaguesManager vaguesManager;
+
 
     public void Start()
     {

@@ -72,13 +72,21 @@ public class VaguesManager : MonoBehaviour
         playerStats.Rounds++;
 
         Wave wave = waves[waveIndex];
-        
 
-        EnemiesAlive = wave.count;
-
-        for (int i = 0; i < wave.count; i++)
+        int[] totalCounts = new int[wave.subwaves.Length];
+        EnemiesAlive = wave.GetTotal();
+        for (int i = 0; i < wave.GetTotal(); i++)
         {
-            SpawnEnemy(wave.enemy);
+            int prefabToPickFrom;
+            do
+            {
+                prefabToPickFrom = Random.Range(0, wave.subwaves.Length);
+            }
+            while (totalCounts[prefabToPickFrom] == wave.subwaves[prefabToPickFrom].count);
+
+            totalCounts[prefabToPickFrom]++;
+
+            SpawnEnemy(wave.subwaves[prefabToPickFrom].enemy);
             yield return new WaitForSeconds(1f / wave.rate);
         }
        

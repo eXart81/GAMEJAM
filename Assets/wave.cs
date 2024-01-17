@@ -5,6 +5,7 @@ public class SubWave
 {
     public GameObject enemy;
     public int count;
+    public float rateOffset;
 }
 
 [System.Serializable]

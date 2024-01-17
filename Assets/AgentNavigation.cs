@@ -11,14 +11,15 @@ public class AgentNavigation : MonoBehaviour
     NavMeshAgent agent;
     PlayerStats stats;
     // Update is called once per frame
-
+    float distTruc;
     Vector3 GetPositionFromTargetIndex(int index)
     {
-        return chemin.transform.GetChild(index).position;
+        return chemin.transform.GetChild(index).position + new Vector3(Random.Range(-1.5f,1.5f),0f, Random.Range(-1.5f,1.5f));
     }
 
     void Start()
     {
+        distTruc = Random.Range(-0.5f, 0.5f);
         agent = GetComponent<NavMeshAgent>();
         agent.destination = GetPositionFromTargetIndex(currentIndex);
         stats = FindObjectOfType<PlayerStats>();
@@ -27,7 +28,7 @@ public class AgentNavigation : MonoBehaviour
     private void Update()
     {
 
-        bool hasArrived = Vector3.Distance(transform.position, GetPositionFromTargetIndex(currentIndex)) < 2;
+        bool hasArrived = Vector3.Distance(transform.position, GetPositionFromTargetIndex(currentIndex)) < 2 + distTruc;
         if (hasArrived)
         {
             currentIndex += 1;

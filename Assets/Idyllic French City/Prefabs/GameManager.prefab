@@ -154,11 +154,11 @@ Transform:
   m_GameObject: {fileID: 3218264287729613180}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.811, y: 3.3000002, z: 25.13}
+  m_LocalPosition: {x: -2.382187, y: -4.8703823, z: 17.187727}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5705910727971636140}
+  m_Father: {fileID: 5168373448111092944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3914452338401963543
 GameObject:
@@ -196,7 +196,6 @@ Transform:
   - {fileID: 3077001737546102146}
   - {fileID: 2553463515518840173}
   - {fileID: 5168373448111092944}
-  - {fileID: 486585807755823434}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7665140914684273441
@@ -214,14 +213,11 @@ MonoBehaviour:
   gameManager: {fileID: 5949535382399769973}
   chemin: {fileID: 0}
   waves:
-  - enemy: {fileID: 5193483430647073772, guid: c70f836673d6d434a93f5cef9e7d7537, type: 3}
-    count: 5
+  - subwaves: []
     rate: 2
-  - enemy: {fileID: 8863466085332144201, guid: 8b27f73bf92cfdf4098756290f19a32b, type: 3}
-    count: 15
+  - subwaves: []
     rate: 1
-  - enemy: {fileID: 8073564056096137164, guid: f4d180bd4ed314d4583c19de27310e92, type: 3}
-    count: 30
+  - subwaves: []
     rate: 10
   spawnPoint: {fileID: 0}
   waveCountdownTimer: {fileID: 0}
@@ -284,6 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5168373448111092944}
+  - component: {fileID: 8440662548264893392}
   m_Layer: 0
   m_Name: Shop 3
   m_TagString: Untagged
@@ -303,9 +300,26 @@ Transform:
   m_LocalPosition: {x: 24.193188, y: 8.1703825, z: 7.942272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 486585807755823434}
   m_Father: {fileID: 5705910727971636140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8440662548264893392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947832662384797358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa419676a11853e418e5da1333012af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tourellePrefab: {fileID: 3109888669993457010, guid: 2f79b22ff7bd1c3409948ede1dd64f9b,
+    type: 3}
+  emplacementTourelleShop: {fileID: 486585807755823434}
+  price: 100
 --- !u!1 &8397887566552731910
 GameObject:
   m_ObjectHideFlags: 0

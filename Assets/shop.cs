@@ -6,12 +6,16 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] public Turret tourellePrefab; // Référence au prefab de l'objet à instancier
     [SerializeField] private Transform emplacementTourelleShop; // Emplacement initial où l'objet doit apparaître
-    [SerializeField] private int price = 100;
+    [SerializeField] public int _price = 300;
+    
+    ShopPrice ShopPriceObject;
 
     PlayerStats playerStats;
     void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>(); 
+        playerStats = FindObjectOfType<PlayerStats>();
+        ShopPriceObject = GetComponent<ShopPrice>();
+        ShopPriceObject?.UpdateshopPricetext(_price);
         Spawn();
     }
 
@@ -23,9 +27,9 @@ public class Shop : MonoBehaviour
 
     internal bool CanBuy()
     {
-        if (playerStats.Money >= price)
+        if (playerStats.Money >= _price)
         {
-            playerStats.Money -= price;
+            playerStats.Money -= _price;
             Invoke("Spawn", 3f);
             return true;
         }

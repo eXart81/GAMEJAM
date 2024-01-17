@@ -15,9 +15,6 @@ public class VaguesManager : MonoBehaviour
     [SerializeField]
     private Transform spawnPoint;
 
-    [SerializeField]
-    private float timeBetweenWaves = 5f;
-
     private float countdown = 5f;
 
     [SerializeField]

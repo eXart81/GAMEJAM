@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
     public int Lives
     {
         get { return _lives; }
-        set { _lives = value; hudObject.UpdateLives(value); }
+        set { _lives = value; if (_lives < 0) Lives = 0; hudObject.UpdateLives(value); }
     }
 
     public int startLives = 20;

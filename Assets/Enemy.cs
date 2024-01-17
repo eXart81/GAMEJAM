@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         speed = startSpeed * (1f - amount);
     }
 
-    private void Die()
+    public void Die()
     {
         isDead = true;
 

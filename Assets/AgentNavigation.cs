@@ -33,7 +33,7 @@ public class AgentNavigation : MonoBehaviour
             currentIndex += 1;
             if(currentIndex == chemin.transform.childCount)
             {
-                Destroy(gameObject);
+                GetComponent<Enemy>().Die();
                 stats.GetComponent<PlayerStats>().Lives -= 1;
             }
             else

@@ -31,7 +31,7 @@ public class Turret : MonoBehaviour
     private float turnSpeed = 6.5f;
     public Transform firePoint;
 
-
+    [HideInInspector] public Shop shop;
     // Use this for initialization
     void Start()
     {
@@ -91,10 +91,13 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            if (fireCountdown <= 0f)
+            if (shop == null)
             {
-                Shoot();
-                fireCountdown = 1 / fireRate;
+                if (fireCountdown <= 0f)
+                {
+                    Shoot();
+                    fireCountdown = 1 / fireRate;
+                }
             }
 
             fireCountdown -= Time.deltaTime;
@@ -146,5 +149,26 @@ public class Turret : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public bool TryPickUpByPlayer()
+    {
+        // SI JE SUIS PAS AU SHOP (DEJA ACHETEE)
+        if(shop == null)
+        {
+            return true;
+        }
+
+        // SINON, EST CE QUE JE PEUX ETRE ACHETEE
+        if(shop.CanBuy())
+        {
+            shop = null;
+            return true;
+        }
+        //SI LE JOUEUR A PAS LES THUNES
+        else
+        {
+            return false;
+        }
     }
 }

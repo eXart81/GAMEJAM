@@ -9,7 +9,6 @@ public class objetsàdeplacés : MonoBehaviour
     public float throwForce = 10;
     private bool hasPlayer = false;
     private bool beingCarried = false;
-    private bool touched = false;
 
     private void Start()
     {
@@ -30,14 +29,18 @@ public class objetsàdeplacés : MonoBehaviour
        
        if (hasPlayer && Keyboard.current[Key.F].wasPressedThisFrame)
        {
-            GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<Collider>().enabled = false;
-            transform.parent = Camera.main.transform;
-            transform.position = Camera.main.transform.position + Camera.main.transform.forward * 3f;
-            beingCarried=true;
-       }
-    
-       if (beingCarried)
+            Turret t = GetComponent<Turret>();
+            if(t.TryPickUpByPlayer())
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+                GetComponent<Collider>().enabled = false;
+                transform.parent = Camera.main.transform;
+                transform.position = Camera.main.transform.position + Camera.main.transform.forward * 3f;
+                beingCarried=true;
+            }
+        }
+
+        if (beingCarried)
        {
             transform.eulerAngles = new Vector3(0f, transform.parent.eulerAngles.y, 0f);
 
@@ -52,13 +55,5 @@ public class objetsàdeplacés : MonoBehaviour
                 beingCarried = false;
             }
        }
-    }
-
-    void OnTriggerEnter()
-    {
-        if (beingCarried)
-        {
-            touched = true;
-        }
     }
 }

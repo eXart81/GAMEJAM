@@ -5139,17 +5139,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eff_Aura_2_oneShot
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -5211,9 +5239,53 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
       propertyPath: lengthInSec
-      value: 1
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: lengthInSec
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: lengthInSec
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 1f69573c6714a41afa0156d54135c6b9, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

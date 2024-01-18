@@ -97,7 +97,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 0
   startHealth: 100
-  worth: 50
+  worth: 5
   deathEffect: {fileID: 0}
   healthbar: {fileID: 0}
 --- !u!114 &6633188811619349814

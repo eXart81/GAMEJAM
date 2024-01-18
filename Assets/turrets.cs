@@ -138,7 +138,8 @@ public class Turret : MonoBehaviour
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+        if(impactEffect != null)
+            impactEffect.Play();
         if (bullet != null)
         {
             bullet.Seek(target);

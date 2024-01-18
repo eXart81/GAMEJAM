@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -51,20 +52,27 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
 
-        vaguesManager.GetComponent<PlayerStats>().Money += worth;
-
-        if(deathEffect != null)
-        {
-            GameObject deathParticles = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(deathParticles, 2f);
-        }
-
         // Utilisez l'instance de VaguesManager pour décrémenter EnemiesAlive
         if (vaguesManager != null)
         {
             vaguesManager.DecrementEnemiesAlive();
         }
+        
+        if (deathEffect != null)
+        {
+            GameObject deathParticles = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(deathParticles, 2f);
+        }
 
+        GetComponent<NavMeshAgent>().speed = 0;
+        var a = GetComponent<Animator>();
+        a.SetTrigger("death");
+        Invoke("RealDeath", a.GetCurrentAnimatorClipInfo(0).Length);
+    }
+
+    public void RealDeath()
+    { 
+        vaguesManager.GetComponent<PlayerStats>().Money += worth;
         Destroy(gameObject);
     }
 }

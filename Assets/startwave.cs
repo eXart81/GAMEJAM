@@ -8,7 +8,7 @@ public class startwave : MonoBehaviour
     [SerializeField] private float maxDistance = 5f;
 
     [SerializeField] private VaguesManager vaguesManager; // Assurez-vous que cette variable est correctement assignée dans l'inspecteur Unity.
-
+    [SerializeField] AudioSource AudioData;
     void Start()
     {
         // Assurez-vous que vaguesManager est correctement assigné
@@ -29,6 +29,7 @@ public class startwave : MonoBehaviour
                 if (hit.collider.CompareTag("Bouton"))
                 {
                     Debug.Log("C'est ok");
+                    AudioData.Play(0);
 
                     // Démarrer la vague lorsque le bouton est cliqué
                     vaguesManager.StartNextWave();

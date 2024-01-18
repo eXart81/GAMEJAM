@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     private float health;
     public int worth = 5;
 
-    
+    [SerializeField] public Transform targetPoint;
 
     public GameObject deathEffect;
 

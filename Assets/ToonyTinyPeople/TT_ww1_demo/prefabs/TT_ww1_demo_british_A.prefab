@@ -414,6 +414,7 @@ Transform:
   m_Children:
   - {fileID: 427330}
   - {fileID: 477882}
+  - {fileID: 7707006363373995793}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9514194
@@ -453,6 +454,7 @@ MonoBehaviour:
   speed: 0
   startHealth: 100
   worth: 5
+  targetPoint: {fileID: 7707006363373995793}
   deathEffect: {fileID: 0}
   healthbar: {fileID: 0}
 --- !u!114 &-7006861458952540784
@@ -1152,4 +1154,35 @@ Transform:
   m_Children:
   - {fileID: 402608}
   m_Father: {fileID: 448274}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6369888157298846915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7707006363373995793}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7707006363373995793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369888157298846915}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 403460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

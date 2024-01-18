@@ -144,7 +144,7 @@ public class Turret : MonoBehaviour
             impactEffect.Play();
         if (bullet != null)
         {
-            bullet.Seek(target);
+            bullet.Seek(targetEnemy.targetPoint);
         }
     }
 

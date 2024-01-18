@@ -87,7 +87,7 @@ public class VaguesManager : MonoBehaviour
             totalCounts[prefabToPickFrom]++;
 
             SpawnEnemy(wave.subwaves[prefabToPickFrom].enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
+            yield return new WaitForSeconds((1f / (wave.rate)) + wave.subwaves[prefabToPickFrom].rateOffset+Random.Range(0f,0.15f));
         }
        
         waveIndex++;

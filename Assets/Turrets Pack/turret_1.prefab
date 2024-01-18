@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a1d7b245b0adb43a9ba0cc7bc2f63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
+  range: 20
   bulletPrefab: {fileID: 6532773388895067776, guid: 64924f0c6aa79da4d93930cb96c7d872,
     type: 3}
-  fireRate: 7
+  fireRate: 9
   useLaser: 0
   damageOverTime: 30
   slowAmount: 0.5
@@ -195,7 +195,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &2063495078024457535
 Rigidbody:
   m_ObjectHideFlags: 0

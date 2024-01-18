@@ -50,8 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   speed: 0
-  startHealth: 5000
-  worth: 50
+  startHealth: 1500
+  worth: 300
   deathEffect: {fileID: 0}
   healthbar: {fileID: 0}
 --- !u!114 &-1451411015641115895

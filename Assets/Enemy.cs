@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float startHealth = 100f;
     private float health;
-    public int worth = 50;
+    public int worth = 5;
 
     
 

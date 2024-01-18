@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
         set { _money = value; hudObject.UpdateMoney(value); }
     }
 
-    public int startMoney = 400;
+    public int startMoney = 150;
 
     int _lives;
     public int Lives

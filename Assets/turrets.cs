@@ -32,6 +32,7 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
 
     [HideInInspector] public Shop shop;
+    [SerializeField] AudioSource AudioData;
     // Use this for initialization
     void Start()
     {
@@ -96,6 +97,7 @@ public class Turret : MonoBehaviour
                 if (fireCountdown <= 0f)
                 {
                     Shoot();
+                    AudioData.Play(0);
                     fireCountdown = 1 / fireRate;
                 }
             }
